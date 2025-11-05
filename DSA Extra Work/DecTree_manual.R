@@ -1,0 +1,5 @@
+library(rpart); library(rpart.plot)
+fit <- rpart(Species ~ ., data = iris)
+pred <- predict(fit, iris, type="class")
+acc <- mean(pred == iris$Species)
+rpart.plot(fit)
